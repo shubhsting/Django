@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# url ki Configurationadd krne ke liye
+from django.conf.urls import include
 from first_app import views
 urlpatterns = [
     path('',views.index,name='index'),
+    path('newextension/',include('first_app.urls')),
     path('admin/', admin.site.urls),
 ]
